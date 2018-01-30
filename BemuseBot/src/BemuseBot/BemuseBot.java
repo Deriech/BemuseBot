@@ -24,14 +24,15 @@ public class BemuseBot {
      */
     public static void main(String[] args) throws AWTException, InterruptedException, IOException {
         Robot robot = new Robot();
+        final int yCoord = 573;
         while (true) {
-        quickTime(532, 575, robot, KeyEvent.VK_S);
-        quickTime(580, 575, robot, KeyEvent.VK_D);
-        quickTime(620, 575, robot, KeyEvent.VK_F);
-        quickTime(665, 575, robot, KeyEvent.VK_SPACE);
-        quickTime(710, 575, robot, KeyEvent.VK_J);
-        quickTime(755, 575, robot, KeyEvent.VK_K);
-        quickTime(800, 575, robot, KeyEvent.VK_L);
+        quickTime(532, yCoord, robot, KeyEvent.VK_S);
+        quickTime(580, yCoord, robot, KeyEvent.VK_D);
+        quickTime(620, yCoord, robot, KeyEvent.VK_F);
+        quickTime(665, yCoord, robot, KeyEvent.VK_SPACE);
+        quickTime(710, yCoord, robot, KeyEvent.VK_J);
+        quickTime(755, yCoord, robot, KeyEvent.VK_K);
+        quickTime(800, yCoord, robot, KeyEvent.VK_L);
             
         }
         // TODO code application logic here
