@@ -11,7 +11,9 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -27,22 +29,22 @@ public class BemuseBot {
         //ImageIO.write(screenFullImage, "png", new File("Test2.png"));
         final int yCoord = 0;
         while (true) {
-            BufferedImage screenFullImage = robot.createScreenCapture(new Rectangle(532, 582, 301, 14));
-            quickTime(2, yCoord, robot, KeyEvent.VK_S, screenFullImage);
-            quickTime(46, yCoord, robot, KeyEvent.VK_D, screenFullImage);
-            quickTime(86, yCoord, robot, KeyEvent.VK_F, screenFullImage);
-            quickTime(131, yCoord, robot, KeyEvent.VK_SPACE, screenFullImage);
-            quickTime(176, yCoord, robot, KeyEvent.VK_J, screenFullImage);
-            quickTime(221, yCoord, robot, KeyEvent.VK_K, screenFullImage);
-            quickTime(261, yCoord, robot, KeyEvent.VK_L, screenFullImage);
+            
+            BufferedImage pic = robot.createScreenCapture(new Rectangle(532, 573, 301, 14));
+            quickTime(2, yCoord, robot, KeyEvent.VK_S, pic);
+            quickTime(46, yCoord , robot, KeyEvent.VK_D, pic);
+            quickTime(86, yCoord , robot, KeyEvent.VK_F, pic);
+            quickTime(131, yCoord , robot, KeyEvent.VK_SPACE, pic);
+            quickTime(176, yCoord , robot, KeyEvent.VK_J, pic);
+            quickTime(221, yCoord , robot, KeyEvent.VK_K, pic);
+            quickTime(261, yCoord , robot, KeyEvent.VK_L, pic);
 
         }
         // TODO code application logic here
     }
 
     public static void quickTime(int XCoord, int YCoord, Robot robot, int key, BufferedImage image) throws IOException {
-        Color RGB = new Color(image.getRGB(XCoord, YCoord));
-        int red = RGB.getBlue();
+        int red = new Color(image.getRGB(XCoord, YCoord)).getBlue();
         if (red > 180) {
             robot.keyPress(key);
         } else {
